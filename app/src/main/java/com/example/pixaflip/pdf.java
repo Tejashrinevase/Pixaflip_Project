@@ -1,8 +1,28 @@
 package com.example.pixaflip;
 
 public class pdf {
-    String name;
-    String url;
+    private String pdfName;
+    private String Url;
 
-    //complete getter and setter methods
+
+    public pdf(String pdfName, String Url) {
+        this.pdfName = pdfName;
+        this.Url = Url;
+    }
+
+    public String getPdfName() {
+        return pdfName;
+    }
+
+    public void setPdfName(String pdfName) {
+        this.pdfName = pdfName;
+    }
+
+    public String getUrl() {
+        return Url;
+    }
+
+    public void setPdfUrl(String pdfUrl) {
+        this.Url = Url;
+    }
 }
