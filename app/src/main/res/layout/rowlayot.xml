@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    android:id="@+id/card_view">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FBEEE6"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/Tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOC"
+            android:padding="10dp"
+            android:textColor="#900C3F"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/Tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Indian"
+            android:padding="10dp"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Foriegn"
+            android:padding="10dp"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Tv3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Discharged"
+            android:padding="10dp"
+            android:textColor="#000"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/Tv4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Death"
+            android:padding="10dp"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/Tv5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Total"
+            android:padding="10dp"
+            android:textColor="#000"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+    <View
+        android:layout_gravity="bottom"
+        android:background="@android:color/black"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+</androidx.cardview.widget.CardView>

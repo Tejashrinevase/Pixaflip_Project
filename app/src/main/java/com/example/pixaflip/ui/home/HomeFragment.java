@@ -6,16 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.pixaflip.DisplayCovidActivity;
 import com.example.pixaflip.DisplayPdfActivity;
+import com.example.pixaflip.DisplayReport;
 import com.example.pixaflip.DisplayVideoActivity;
 import com.example.pixaflip.MainActivity;
 import com.example.pixaflip.R;
@@ -32,13 +30,14 @@ public class HomeFragment extends Fragment {
 
         Button playVideo=root.findViewById(R.id.playVideo);
         Button showPdf=root.findViewById(R.id.showPdf);
+        Button viewReport = root.findViewById(R.id.viewreport);
 
         playVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.context, DisplayVideoActivity.class);
                 startActivity(intent);
-              //  Toast.makeText(MainActivity.context,"Play video available in Assets folder",Toast.LENGTH_LONG).show();
+                //  Toast.makeText(MainActivity.context,"Play video available in Assets folder",Toast.LENGTH_LONG).show();
             }
         });
 
@@ -50,7 +49,12 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
+        viewReport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { Intent intent = new Intent(MainActivity.context, DisplayCovidActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return root;
     }
