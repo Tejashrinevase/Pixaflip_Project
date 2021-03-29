@@ -1,13 +1,12 @@
 package com.example.pixaflip;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -15,6 +14,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -39,7 +39,7 @@ public class DisplayCovidActivity extends AppCompatActivity {
         state.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(DisplayCovidActivity.this, DisplayReport.class));
+                startActivity(new Intent(DisplayCovidActivity.this, ShowStates.class));
             }
         });
 
@@ -62,9 +62,9 @@ public class DisplayCovidActivity extends AppCompatActivity {
                             String deaths=dataObject.getString("deaths");
                             String notLoc=dataObject.getString("confirmedButLocationUnidentified");
 
-                            mTextViewResult.append("Total:"+total+"\n\n\n Case In India:"+caseI+"\n\n\n Case In Foreign:"+caseF+
-                                    "\n\n\n Discharged:"+discharged+"\n\n\n Deaths:"+deaths+"\n\n\n Confirmed But Location Undefine:"+notLoc+
-                                    "\n\n");
+                            mTextViewResult.append("total :"+total+"\n\n\ncase in india :"+caseI+"\n\n\ncase in foreign : "+caseF+
+                                    "\n\n\n discharged : "+discharged+"\n\n\ndeaths : "+deaths+"\n\n\nconfirmed but location undefine :"+notLoc+
+                                    "\n\n\n");
 
                             //  JSONArray obj = offerObject.getJSONArray("unofficial-summary");
 

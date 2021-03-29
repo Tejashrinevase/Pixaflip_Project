@@ -1,3 +1,4 @@
+/*
 package com.example.pixaflip;
 
 import android.os.Bundle;
@@ -40,3 +41,4 @@ public class DisplayReport extends AppCompatActivity implements DataListener {
         recyclerView.setAdapter(new MyAdapter(covidDataList,this));
     }
 }
+*/

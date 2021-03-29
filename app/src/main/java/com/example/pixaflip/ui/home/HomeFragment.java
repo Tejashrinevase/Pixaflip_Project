@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.pixaflip.DisplayCovidActivity;
 import com.example.pixaflip.DisplayPdfActivity;
-import com.example.pixaflip.DisplayReport;
+//import com.example.pixaflip.DisplayReport
 import com.example.pixaflip.DisplayVideoActivity;
 import com.example.pixaflip.MainActivity;
 import com.example.pixaflip.R;

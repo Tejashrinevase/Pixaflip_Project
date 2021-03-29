@@ -12,12 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".DetailActivity"></activity>
         <activity android:name=".DisplayCovidActivity" />
         <activity android:name=".ui.Favourite.FavActivity" />
         <activity android:name=".WebActivity" />
         <activity android:name=".DisplayVideoActivity" />
         <activity android:name=".DisplayPdfActivity" />
-        <activity android:name=".DisplayReport" />
+       <!-- <activity android:name=".DisplayReport" />-->
+        <activity android:name=".ShowStates"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

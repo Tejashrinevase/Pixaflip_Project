@@ -20,7 +20,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
         String create = "CREATE TABLE " + paramtr.TABLE_NAME + "("
                 + paramtr.KEY_ID + " INTEGER PRIMARY KEY," + paramtr.KEY_NAME
                 + " TEXT, " + paramtr.KEY_URL + " TEXT" + ")";
-        Log.d("dbPrabhat", "Query being run is : "+ create);
+        Log.d("dbTejashri", "Query being run is : "+ create);
         db.execSQL(create);
     }
 
@@ -53,7 +53,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
 
         db.insert(paramtr.TABLE_NAME, null, values);
-        Log.d("dbPrabhat", "Successfully inserted");
+        Log.d("dbTejashri", "Successfully inserted");
         db.close();
     }
     public void deleteById(String name){

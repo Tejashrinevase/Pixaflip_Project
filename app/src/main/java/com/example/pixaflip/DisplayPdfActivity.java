@@ -52,7 +52,7 @@ public class DisplayPdfActivity extends AppCompatActivity {
         list.add(new pdf("PDF ","http://www.pdf995.com/samples/pdf.pdf"));
         list.add(new pdf("DataStructure ","http://www.darshan.ac.in/Upload/DIET/Documents/CE/2130702_DS_2015_24112015_025019AM.pdf"));
 
-        //Log.i("Size", String.valueOf(list.size()));
+
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new PdfAdapter(list,this, db);
@@ -88,8 +88,6 @@ public class DisplayPdfActivity extends AppCompatActivity {
                 }
             }
         });
-
-        //create recycler view in this activity and use it to display pdf files.
 
 
     }

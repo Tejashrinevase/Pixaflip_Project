@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pixaflip.ItemClickLester;
+import com.example.pixaflip.ItemClickListner;
 import com.example.pixaflip.R;
 import com.example.pixaflip.sql.Fav;
 import com.example.pixaflip.sql.MyDbHelper;
@@ -31,14 +31,9 @@ public class SlideshowFragment extends Fragment {
         final List<Fav> list = db.getAll();
 
 
-//        list.add(new SlideshowViewModel("Stories ","https://www.bartleby.com/ebook/adobe/3134.pdf"));
-//        list.add(new SlideshowViewModel("C++ ", "https://www.tutorialspoint.com/cplusplus/cpp_tutorial.pdf"));
-//        list.add(new SlideshowViewModel("Java ","https://www.tutorialspoint.com/java/java_tutorial.pdf"));
-//        list.add(new SlideshowViewModel("DSA ","https://www.tutorialspoint.com/data_structures_algorithms/data_structures_algorithms_tutorial.pdf"));
-//        list.add(new SlideshowViewModel("Python ","http://tdc-www.harvard.edu/Python.pdf"));
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        ItemClickLester itemClickListener = new ItemClickLester() {
+        ItemClickListner itemClickListener = new ItemClickListner() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
                 Intent intent = new Intent(getActivity().getApplication(),Fav.class);
