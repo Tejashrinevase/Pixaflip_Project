@@ -9,13 +9,20 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.pixaflip.sql.Fav;
 import com.example.pixaflip.sql.MyDbHelper;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+
+import static android.widget.Toast.LENGTH_SHORT;
 
 public class DisplayPdfActivity extends AppCompatActivity {
 
@@ -23,6 +30,13 @@ public class DisplayPdfActivity extends AppCompatActivity {
     static List<pdf> list;
     ToggleButton toggleButton;
     PdfAdapter adapter;
+    private String getDateTime()
+    {
+        SimpleDateFormat sd=new SimpleDateFormat ("yyyy-MM-ddcHH:mm:ss", Locale.getDefault ());
+        Date d=new Date ();
+        return sd.format(d);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +75,24 @@ public class DisplayPdfActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new PdfAdapter.ItemClickListener() {
             @Override
             public void onItemClick(int pos) {
+                MyDbHelper db = new MyDbHelper(DisplayPdfActivity.this);
+                //  String pname pos.get
+                //  int x=getAda
+
+                String name = list.get(pos).getPdfName();
+
+                Log.d("pdfname",name);
+               // Toast.makeText ("pdfname " +name ,Toast.LENGTH_SHORT ).show ();
+                //Toast.makeText("PdfName is "+name , LENGTH_SHORT).show() ; //).show();
+                //Toast.makeText("name of pdf is:", LENGTH_SHORT).show();
+                //Toast.makeText ("name of pdf is"+name,Toast.LENGTH_SHORT ).show ();
+                //Toast.makeText("name of PDFS is"+name, LENGTH_SHORT).show();
+
+                db.adduseract ( "DisplayPdfActivity",name,getDateTime () );
+                // String timestamp2 =m.setTimestamp ( getDateTime () );
+                // model pro = new model(from2,to2,timestamp2);
+                // db.Adduser (m);
+
                 Intent intent = new Intent(DisplayPdfActivity.this,WebActivity.class);
                 intent.putExtra("position",pos);
                 startActivity(intent);

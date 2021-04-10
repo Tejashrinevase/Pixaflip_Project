@@ -20,12 +20,16 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.pixaflip.sql.MyDbHelper;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class ShowStates extends AppCompatActivity implements StateAdapter.OnItemClickListener{
 
@@ -39,6 +43,13 @@ public class ShowStates extends AppCompatActivity implements StateAdapter.OnItem
     // creating variables for
     // our ui components.
     private RecyclerView courseRV;
+    private String getDateTime()
+    {
+        SimpleDateFormat sd=new SimpleDateFormat ("yyyy-MM-ddcHH:mm:ss", Locale.getDefault ());
+        Date d=new Date ();
+        return sd.format(d);
+    }
+
 
     // variable for our adapter
     // class and array list
@@ -150,6 +161,12 @@ public class ShowStates extends AppCompatActivity implements StateAdapter.OnItem
 
     @Override
     public void onItemClick(int position) {
+        MyDbHelper db = new MyDbHelper(ShowStates.this);
+
+        String name = courseModalArrayList.get(position).getLoc ();
+
+        db.adduseract ( "ShowStates",name,getDateTime () );
+
         Intent detailIntent = new Intent(this, DetailActivity.class);
         MyState clickedItem = courseModalArrayList.get(position);
         detailIntent.putExtra(EXTRA_LOCATION, clickedItem.getLoc());
